@@ -1,6 +1,118 @@
 mixin header(data)
-    .header(class!=data).not-styleLink
 
+    .header-mobile-size
+    .header-mobile
+        .container
+            .header-mobile__sctions
+                .header-mobile__sctions-section
+                    .mobile-list-anim
+                        input(type="checkbox", id="header-bottom-toggleMenuMbl")
+                        label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                            span.menu-mobile
+                                span.menu-mobile-hamburger.one
+                                span.menu-mobile-hamburger.two
+                                span.menu-mobile-hamburger.three
+
+                .header-mobile__sctions-section
+                    a(href='#').header-mobile__logo: +img('general/logo', 'png')
+
+                .header-mobile__sctions-section
+                    a(href='#' class='db').header-mobile__link-icon.BebasNeue
+                        +icon('basket', 'header__link-icon-basket', 47, 42)
+                        span.header-mobile__link-icon-count 5
+
+        .header-mobile-nav-block
+            .header-mobile-nav
+                div
+                    ul.header-mobile-nav__list.BebasNeue
+                        li: a(href="#"): span Комбо
+                        li: a(href="#"): span Мясо
+                        li: a(href="#"): span бургеры
+                        li: a(href="#"): span гарниры
+                        li: a(href="#"): span салаты
+                        li: a(href="#"): span соусы
+                        li: a(href="#"): span десерты
+                        li: a(href="#"): span напитки
+
+                    br
+                    .container
+                        //ul.header-mobile-nav__menu
+                        ul.header-mobile-nav__list.header-mobile-nav__list_menu.BebasNeue
+                            li: a(href="#") Акции
+                            li: a(href="#") Контакты
+                            li: a(href="#") О нас
+
+                    br
+                    a(href="#").header-mobile-nav__phone.BebasNeue 73-27-31
+                    button.header__form-btn.BebasNeue обратная связь
+
+    -if(data)
+        .slider-head
+            .slider-head__section
+                +img('content/slider/slider-1')
+            .slider-head__section
+                +img('content/slider/slider-2')
+
+    .header
+        .container
+            .row.align-items-center
+                .col-lg-1
+                    .header__logo-block
+                        a(href='#'): +img('general/logo', 'png').header__logo
+                        a(href="#").header__phone.BebasNeue  73-27-31
+                .col-lg-10
+                    .header__content
+                        .header__content-section
+                            .header__content-top
+                                ul.header__menu.PH
+                                    li: a(href="#") акции
+                                    li: a(href="#") контакты
+                                    li: a(href="#") о нас
+
+                            ul.header__nav.PH
+                                li: a(href="#"): span КОМБО
+                                li: a(href="#"): span Мясо
+                                li: a(href="#"): span бургеры
+                                li: a(href="#"): span гарниры
+                        .header__content-section.header__content-section_logo-character
+                            +img('general/logo-character', 'gif')
+                        .header__content-section
+                            .header__content-top
+
+                                //.BebasNeue.d-xl-flex.d-sm-none.d-xd-none.justify-content-xl-end
+                                //.justify-content-xl-between
+                                //    button.header__form-btn.BebasNeue обратная связь
+                                //    span 60 минут или рулька в бесплатно
+
+
+                                //.header__form.BebasNeue.d-xd-flex.d-sm-none
+                                .header__form.BebasNeue
+                                    //.header__form-section.d-xd-flex.d-sm-none: .header__form-title.color-brown обратная связь
+
+                                    .header__form-section
+                                        input(placeholder='Имя').header__form-input
+                                    .header__form-section
+                                        input(placeholder='+7 (___) ___ __ __').header__form-input
+                                    .header__form-section
+                                        button.header__form-btn ok
+
+
+
+                            ul.header__nav.header__nav_right.PH
+                                li: a(href="#"): span салаты
+                                li: a(href="#"): span соусы
+                                li: a(href="#"): span десерты
+                                li: a(href="#"): span напитки
+
+
+                .col-lg-1.header__col-last.text-center
+                    //a(href='#' class='db').header__link-icon.d-sm-none.d-xd-block: i.s-profile
+                    a(href='#' class='db').header__link-icon
+                        +icon('profile', 'header__link-icon-profile', 43, 60)
+                    a(href='#' class='db').header__link-icon.BebasNeue
+                        //+icon('basket', 'header__link-icon-basket', 73, 64)
+                        +icon('basket', 'header__link-icon-basket', 86, 75)
+                        span.header__link-icon-count 5
 
 
 

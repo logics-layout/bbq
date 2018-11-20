@@ -3,16 +3,71 @@ extends main
 block head
     - var headData = {title: "Главная"}
     - var breadcrumb = true
-    - var index = 'header_index'
+    - var index = true
 
     link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
 
+    .container
+        br
+        h1.text-center КОМБО
+
+        .catalog-list
+            - for(var i=0;i<8;i++)
+                .catalog-list__section
+                    .catalog-item
+                        span.catalog-item__img: +img('content/item/1')
+                        span.catalog-item__title Коробка обеденная
+                        span.catalog-item__desc Запеченные куриные крылья в маринаде из соуса барбекю
+                        span.catalog-item__flex
+                            span: .catalog-item__price.BebasNeue 1500 руб.
+                            span: button.catalog-item__btn.BebasNeue В корзину
+        br
+        h1.text-center Мясо
+        .catalog-list
+            - for(var i=0;i<8;i++)
+                .catalog-list__section
+                    .catalog-item
+                        span.catalog-item__img: +img('content/item/1')
+                        span.catalog-item__title Коробка обеденная
+                        span.catalog-item__desc Запеченные куриные крылья в маринаде из соуса барбекю
+                        span.catalog-item__flex
+                            span: .catalog-item__price.BebasNeue 1500 руб.
+                            span: button.catalog-item__btn.BebasNeue В корзину
+        br
+        h1.text-center бургеры
+        .catalog-list
+            - for(var i=0;i<8;i++)
+                .catalog-list__section
+                    .catalog-item
+                        span.catalog-item__img: +img('content/item/1')
+                        span.catalog-item__title Коробка обеденная
+                        span.catalog-item__desc Запеченные куриные крылья в маринаде из соуса барбекю
+                        span.catalog-item__flex
+                            span: .catalog-item__price.BebasNeue 1500 руб.
+                            span: button.catalog-item__btn.BebasNeue В корзину
 
 
-
-
+        .delivery
+            h4.h1.text-center Доставка и оплата
+            br
+            .row
+                .col-lg-3.col-md-6
+                    p.delivery__title: b 60 минут по зоне доставки #[br]или рулька бесплатно.
+                    p.delivery__text Если мы не успеем доставить заказ, в течение 60 минут по зоне доставки, курьер подарит вам сертификат на рульку.
+                .col-lg-3.col-md-6
+                    p.delivery__title: b КопТиМяс - доставки bbq №1 в Иркутске.
+                    p.delivery__text Перед отправкой заказа мы учитываем все пожелания нашего клиента.
+                    p.delivery__text Все цены в меню указаны без учета скидок.
+                .col-lg-3.col-md-6
+                    p.delivery__title: b 550 руб
+                    p.delivery__text минимальная сумма доставки
+                    br
+                    p.delivery__title: b 8 500 руб
+                    p.delivery__text Максимальная сумма при оплате наличными
+                .col-lg-3.col-md-6
+                    a(href="#").delivery__maps-link: +img('/general/delivery__maps')
 
 block script
     script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")

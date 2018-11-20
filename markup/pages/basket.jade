@@ -1,0 +1,228 @@
+extends main
+
+block head
+    - var headData = {title: "Корзина"}
+    - var breadcrumb = true
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block content
+
+    .container
+        br
+        h1.text-center Корзина
+
+        .basket-list
+            - for(var i=0;i<4;i++)
+                .basket-list__row
+                    .basket-list__col.basket-list__col_title
+                        .basket-list__title.BebasNeue Коробка обеденная
+                        .basket-list__desc Вес 800г.
+
+                    .basket-list__col.basket-list__col_count
+                        .count-el
+                            button(type='button').count-el__btn.count-el__btn_minus -
+                            input.count-el__input(value='1')
+                            button(type='button').count-el__btn +
+
+                    .basket-list__col
+                        .basket-list__price.BebasNeue.color-yellow 1 500 руб.
+                    .basket-list__col.basket-list__col_del.text-right
+                        a(href="#").basket-list__del: +icon('del', '', 35, 35)
+
+        br
+        br
+
+        h2.text-center Рекомендуем попробовать
+        .slider-list-block
+            button.slider-list-block__btn.slider-list-block__btn_prev: +icon('arrow-left')
+            .slider-list-block__gradient.slider-list-block__gradient_left
+            .slider-list
+                - for(var i=0;i<10;i++)
+                    .slider-list__section
+                        .slider-item
+                            .slider-item__section
+                                .slider-item__img: +img('content/item/2', 'png')
+                            .slider-item__section
+                                .slider-item__name Кока-кола Зеро
+                                .slider-item__desc 1 л
+                                .slider-item__price.BebasNeue.color-yellow 120 руб.
+                                button.btn.btn-outline-yellow В корзину
+
+            .slider-list-block__gradient.slider-list-block__gradient_right
+            button.slider-list-block__btn.slider-list-block__btn_next: +icon('arrow-right')
+
+        //hr
+        br
+        br
+        .text-center
+            .basket-itog.BebasNeue
+                .basket-itog__title Сумма заказа:
+                .basket-itog__price.color-yellow 395 руб.
+
+        hr
+
+        h3.order-form__title.PH Оформление заказа
+        .row.justify-content-center: .col-lg-10.col-xl-8
+            .order-form
+                .order-form__inputs
+                    //.form-group
+                    //    .row
+                    //        .col-2
+                    //            label.form-label Имя
+                    //        .col-10
+                    //            input.form-control()
+
+                    .form-group
+                        .order-form__table
+                            .order-form__table-cell.order-form__table-cell_label
+                                label.form-label Телефон
+                            .order-form__table-cell
+                                input.form-control(type='tel')
+
+                        .order-form__table
+                            .order-form__table-cell.order-form__table-cell_label
+                            .order-form__table-cell
+                                a(href='#', data-block='#toggle-block-detal').toggle-block
+                                    span.toggle-block__icon: span.close
+                                    span.toggle-block__title #[span.color-yellow: span.color-yellow__title.color-yellow__title_dotted.color-yellow__title_viewBorder Указать детали] чтобы сделать заказ без разговора с оператором
+
+                    #toggle-block-detal(style='display: none;')
+                        h3.order-form__title.PH Доставка
+
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Имя и фамилия
+                                .order-form__table-cell
+                                    input.form-control(type='text')
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Адрес доставки
+                                .order-form__table-cell
+                                    input.form-control(type='text')
+                                    small если вы укажете номер квартиры - мы сможем доставить ваш заказ чуть быстрее
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Дата и время
+                                .order-form__table-cell
+                                    input.form-control(type='text').dateTimePicker
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Способ оплаты
+                                .order-form__table-cell
+                                    .input-toggle(data-block='#toggle-block-delivery')
+                                        label.input-toggle__item
+                                            input.input-toggle__item-input(type='radio', name='d', checked='', data-action='slideDown')
+                                            span.input-toggle__item-el Наличными
+                                        label.input-toggle__item
+                                            input.input-toggle__item-input(type='radio', name='d', data-action='slideUp')
+                                            span.input-toggle__item-el Картой
+                            #toggle-block-delivery
+                                .order-form__table
+                                    .order-form__table-cell.order-form__table-cell_label
+                                    .order-form__table-cell
+                                        .block-list
+                                            .block-list__section
+                                                span Сдача с
+                                            .block-list__section
+                                                .label-list
+                                                    .label-list__section
+                                                        label.label-list__item
+                                                            input.label-list__item-input(type='radio', name='a', checked='')
+                                                            span.label-list__item-el без сдачи
+                                                    .label-list__section
+                                                        label.label-list__item
+                                                            input.label-list__item-input(type='radio', name='a')
+                                                            span.label-list__item-el 1000
+                                                    .label-list__section
+                                                        label.label-list__item
+                                                            input.label-list__item-input(type='radio', name='a')
+                                                            span.label-list__item-el 2000
+                                                    .label-list__section
+                                                        label.label-list__item
+                                                            input.label-list__item-input(type='radio', name='a')
+                                                            span.label-list__item-el 5000
+                                            .block-list__section
+                                                span рублей
+
+                        h3.order-form__title.PH Дополнительная информация
+
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label E-mail
+                                .order-form__table-cell
+                                    input.form-control(type='email')
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Кол-во приборов
+                                .order-form__table-cell
+                                    input.form-control(type='number')
+                        .form-group
+                            .order-form__table
+                                .order-form__table-cell.order-form__table-cell_label
+                                    label.form-label Комментарий к заказу
+                                .order-form__table-cell
+                                    textarea.form-control
+
+                    .order-form__table
+                        .order-form__table-cell.order-form__table-cell_label
+                        .order-form__table-cell
+                            .form-group
+                                label.style-checkbox
+                                    input.style-checkbox__input(type='checkbox' value='1', name='', checked='')
+                                    span.style-checkbox__el: +icon('checkbox')
+                                    span.style-checkbox__text Оформляя заказ я принимаю условия пользовательского соглашения и даю согласие на обработку моих данных
+
+                            button.btn.btn-yellow Оформить заказ
+
+
+
+
+        br
+
+
+block script
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

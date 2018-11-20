@@ -5,12 +5,227 @@ body, html{
   min-width: 320px;
 }
 
-@include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+@include my-media-query(max, map_get($grid-breakpoints, xd) - 1) {
 
+  .stock-item__title {
+    font-size: 24px;
+  }
+
+  .catalog-item__price {
+    font-size: 27px;
+    margin-bottom: -6px;
+  }
+
+  .catalog-item__btn {
+    padding: 5px 12px;
+    font-size: 19px;
+    padding-bottom: 0px;
+  }
+
+  .catalog-item {
+    padding: 10px;
+  }
+
+  .delivery:last-child {
+    margin-bottom: -5%;
+  }
+  .delivery__title {
+    font-size: 29px;
+  }
+  .header__nav{
+    font-size: 42px;
+    &:before {
+      height: 3px;
+    }
+  }
+  .header__logo {
+    width: 205px;
+  }
+  .header__form-btn {
+    height: 39px;
+    font-size: 23px;
+  }
+  .header__content-section_logo-character {
+    width: 12%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .header__form-input {
+    border: 3px solid #fff;
+    font-size: 24px;
+    padding-top: 7px;
+    padding-bottom: 2px;
+  }
+  html, body {
+    font-size: 16px;
+  }
+}
+
+@include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  //html, body {
+  //  font-size: 14px;
+  //}
+  .stock-list{
+    margin: -15px;
+    &__section{
+      padding: 15px;
+    }
+  }
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-xd-1, .col-xd-2, .col-xd-3, .col-xd-4, .col-xd-5, .col-xd-6, .col-xd-7, .col-xd-8, .col-xd-9, .col-xd-10, .col-xd-11, .col-xd-12, .col-xd, .col-xd-auto {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .catalog-item__desc {
+    font-size: 14px;
+  }
+  .catalog-item__title {
+    font-size: 23px;
+  }
+
+  .footer__top {
+    text-align: right;
+  }
+  .footer:after {
+    width: 483px;
+    height: 540px;
+    left: auto;
+    right: 20px;
+  }
+  .header__nav {
+    font-size: 32px;
+  }
+  .header__nav li > a {
+    padding: 12px 15px;
+  }
+  .header__content-top {
+    padding-bottom: 15px;
+  }
+  .header__content {
+    padding-top: 9px;
+  }
+  .header__menu li a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .header__menu {
+    font-size: 31px;
+  }
+  .header__logo {
+    width: 175px;
+  }
+  .header__phone {
+    font-size: 41px;
+    margin-top: -23px;
+  }
+  .header__link-icon-profile {
+    width: 42px;
+  }
+  .header__link-icon-basket {
+    width: 62px;
+  }
+  .header__logo {
+    width: 156px;
+    margin-left: -32px;
+  }
+  .header__phone {
+    font-size: 35px;
+    margin-top: -23px;
+    margin-left: -18px;
+  }
+  .header__logo-block{
+    top: -10px;
+  }
+  .header:after {
+    width: 66px;
+    height: 66px;
+    top: -2px;
+  }
+  .header__link-icon-count {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 26px;
+    margin-top: -8px;
+  }
+  .header__link-icon{
+    +*{
+      margin-top: -9px;
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .order-form__title {
+    font-size: 54px;
+  }
+  label.form-label {
+    font-size: 27px;
+    margin-bottom: 5px;
+  }
+  .order-form__table{
+    display: block;
+    &-cell{
+      display: block;
+    }
+  }
 
+  .stock-list{
+    &__section{
+      width: 50%;
+    }
+  }
+
+  .row{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .catalog-list{
+    &__section{
+      width: 33.33%;
+    }
+  }
+  .footer:after {
+    width: 263px;
+    height: 293px;
+    left: auto;
+    right: -80px;
+  }
+  .footer__nav {
+    list-style-position: outside;
+    font-size: 40px;
+  }
+  .footer__phone {
+    font-size: 38px;
+  }
+  .footer__networks > li > a{
+    width: 65px;
+    height: 65px;
+    >svg{
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .footer__top{
+    margin-bottom: 5px;
+  }
+  .footer__top:after, .footer__top:before {
+    height: 7px;
+  }
+
+
+  .header{
+    display: none;
+  }
+  html, body {
+    font-size: 15px;
+  }
+  .delivery:last-child {
+    margin-bottom: 30px;
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xs)) {
@@ -18,7 +233,9 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, sm)) {
-
+  .catalog-item__desc {
+    min-height: 63px;
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, md)) {
@@ -27,16 +244,102 @@ body, html{
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
 
+  .header-mobile, .header-mobile-size{
+    display: none;
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
 
 }
+@include my-media-query(min, map_get($grid-breakpoints, xd)) {
+
+}
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .order-form__title {
+    font-size: 45px;
+  }
+  label.form-label {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  .basket-list__price {
+    font-size: 25px;
+  }
+  .count-el__input {
+    font-size: 26px;
+  }
+  .basket-list{
+    display: block;
+    &__row{
+      display: flex;
+      flex-wrap: wrap;
+      +*{
+        //border-top: 1px solid rgba(255, 255, 255, 0.6);
+      }
+    }
+    &__col{
+      display: block;
+      width: 50%;
+      &_title{
+        width: 100%;
+      }
+      &_count{
+        width: 100%;
+      }
+      &_del{
+
+      }
+    }
+  }
+  .catalog-list{
+    margin: -10px;
+    &__section{
+      width: 50%;
+      padding: 10px;
+    }
+  }
+
+
+  h1, .h1 {
+    font-size: 3.7rem;
+  }
+  .footer:after {
+    display: none;
+  }
 
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
-
+  .slider-item{
+    justify-content: center;
+  }
+  .stock-list{
+    &__section{
+      width: 100%;
+    }
+  }
+  .catalog-list{
+    &__section{
+      width: 100%;
+    }
+  }
+  .footer__top {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .footer__cols{
+    margin: 0;
+    >*{
+      padding: 0;
+      width: 50%;
+    }
+  }
+  .footer__bottom-list{
+    flex-direction: column;
+    > * {
+      padding: 2px 15px;
+    }
+  }
 }

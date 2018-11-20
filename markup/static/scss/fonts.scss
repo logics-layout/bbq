@@ -13,33 +13,29 @@
 // 800 -> Heavy, Extra Bold
 // 900 -> Black
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Black", $file-formats: eot woff ttf svg){
+@include font-face("PH", "../fonts/PH-CondCaps/PH-300CondCaps_0", $file-formats: eot svg ttf woff){
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
 };
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Bold", $file-formats: eot woff ttf svg){
+@include font-face("Tahoma", "../fonts/Tahoma/tahoma", $file-formats: eot otf svg ttf woff){
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
+};
+@include font-face("Tahoma", "../fonts/Tahoma/tahomabd", $file-formats: eot otf svg ttf woff){
+  font-style: normal;
+  font-weight: 700;
 };
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Light", $file-formats: eot woff ttf svg){
+@include font-face("BebasNeue", "../fonts/BebasNeue/BebasNeueRegular", $file-formats: eot otf svg ttf woff){
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
 };
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium", $file-formats: eot woff ttf svg){
+@include font-face("BebasNeue", "../fonts/BebasNeue/BebasNeue Bold", $file-formats: eot otf svg ttf woff){
+  font-style: normal;
+  font-weight: 700;
+};
+@include font-face("BebasNeue", "../fonts/BebasNeue/BebasNeue Book", $file-formats: woff){
   font-style: normal;
   font-weight: 500;
 };
-
-//@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman", $file-formats: eot woff ttf svg){
-//  font-style: normal;
-//  font-weight: bold;
-//};
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Thin", $file-formats: eot woff ttf svg){
-  font-style: normal;
-  font-weight: 100;
-};
-

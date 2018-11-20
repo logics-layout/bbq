@@ -1,6 +1,63 @@
 mixin footer(data)
-    footer.footer.not-styleLink
+    footer.footer
         .container
+
+            .footer__top
+                .footer__top-img: +img('assets/footer/logo', 'png')
+
+            .footer__cols
+                div
+                    ul.footer__nav.PH
+                        li: a(href="#") КОМБО
+                        li: a(href="#") Мясо
+                        li: a(href="#") Бургеры
+                        li: a(href="#") Гарниры
+                        li: a(href="#") САЛАТЫ
+                        li: a(href="#") Соусы
+                        li: a(href="#") Десерты
+                        li: a(href="#") Напитки
+                        li: a(href="#") ПРОЧЕЕ
+                div.footer__cols-column
+                    ul.footer__nav.PH
+                        li: a(href="#") Акции
+                        li: a(href="#") контакты
+                        li: a(href="#") о нас
+
+                    div.d-none.d-sm-block
+                        ul.footer__networks
+                            li: a(href="#"): +icon('telegram', '', 35, 35)
+                            li: a(href="#"): +icon('vk', '', 35, 35)
+                            li: a(href="#"): +icon('instagram-logo', '', 35, 35)
+
+                    div.d-none.d-sm-block
+                        a(href="#").footer__phone.BebasNeue 73-27-31
+                        br
+                        a(href="#").footer__phone.BebasNeue 8 902 777 77 77
+
+            .d-sm-none
+                br
+                ul.footer__networks
+                    li: a(href="#"): +icon('telegram', '', 35, 35)
+                    li: a(href="#"): +icon('vk', '', 35, 35)
+                    li: a(href="#"): +icon('instagram-logo', '', 35, 35)
+                div
+                    br
+                    br
+                a(href="#").footer__phone.BebasNeue 73-27-31
+                br
+                a(href="#").footer__phone.BebasNeue 8 902 777 77 77
+
+
+        .footer__bottom
+            .container
+                .footer__bottom-list
+                    div.color-white
+                        span © КопТиМяс. 2018 Все права защищены
+                    div
+                        a(href='#').color-white: span.color-white__title.color-white__title_viewBorder Политика конфиденциальности
+
+
+
 
 
 

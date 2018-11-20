@@ -42,8 +42,9 @@
   text-justify: newspaper;
 }
 
-@mixin text-border-bottom($name, $color){
+@mixin text-border-bottom($name, $color, $colorHover: false){
   .color-#{$name}{
+    text-decoration: none !important;
     color: $color;
     svg{
       fill: $color;
@@ -61,8 +62,18 @@
       }
     }
     &:hover{
+      @if $colorHover {
+        svg{
+          fill: $colorHover;
+        }
+      }
       .color-#{$name}__title{
-        border-bottom-color: rgba(red($color), green($color), blue($color), 0.6);
+        @if $colorHover {
+          color: $colorHover;
+          border-bottom-color: rgba(red($colorHover), green($colorHover), blue($colorHover), 0.6);
+        } @else {
+          border-bottom-color: rgba(red($color), green($color), blue($color), 0.6);
+        }
       }
     }
   }

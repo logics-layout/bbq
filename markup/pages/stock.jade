@@ -1,0 +1,72 @@
+extends main
+
+block head
+    - var headData = {title: "Акции"}
+    - var breadcrumb = true
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block content
+
+    .container
+        br
+        h1.text-center Акции
+        .stock-list
+            .stock-list__section
+                .stock-item
+                    .stock-item__img: +img('content/slider/slider-1')
+                    .stock-item__title.BebasNeue Быстрый удобный способ пообедать
+                    .stock-item__text Бизнесс ланч от "КопТиМяс" на выбор ( как в китайском маленькие порции 1,2,3) типа бенто ланч цена 250-350 руб в итоге. * доставка от 3ех комплектов, либо на сумму более 1000 руб в вашей зоне( деление по зонам доставки)
+            .stock-list__section
+                .stock-item
+                    .stock-item__img: +img('content/slider/slider-2')
+                    .stock-item__title.BebasNeue Быстрый удобный способ пообедать
+                    .stock-item__text "кейтеринг" закажи банкет на мумму более 7к рублей и получи салаты для каждого гостя в подарок от "КопТиМяс" , а так же фирменные напитки за пол цены!
+            .stock-list__section
+                .stock-item
+                    .stock-item__img: +img('content/slider/slider-1')
+                    .stock-item__title.BebasNeue Быстрый удобный способ пообедать
+                    .stock-item__text "акция месяа" фирменная рулька BBQ всего за __ рублей за ____ грамм
+
+        br
+
+
+block script
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

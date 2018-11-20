@@ -5,11 +5,11 @@ html(class="no-js", lang="ru")
     include ../components/head/head
     include ../components/header/header
     include ../components/footer/footer
-    include ../components/modal/modal
 
     head
         //- start  block head
         link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+        link(href="%=static=%css/separate-css/jquery.datetimepicker.css", rel="stylesheet", type="text/css")
         block head
         - if(headData)
             +head(headData)
@@ -39,7 +39,7 @@ html(class="no-js", lang="ru")
         .page__footer
             +footer()
 
-        +modal()
+
 
         a(href='#').linkTop.not-styleLink
 
@@ -48,8 +48,9 @@ html(class="no-js", lang="ru")
         script svg4everybody();
 
         script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
-        script(src="%=static=%js/separate-js/dropdown.js" type="text/javascript")
-        script(src="%=static=%js/separate-js/modal.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/inputmask.min.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/jquery.datetimepicker.js" type="text/javascript")
+
         //- start block script
         block script
         //- end block script
