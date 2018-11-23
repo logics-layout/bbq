@@ -5,6 +5,7 @@ html(class="no-js", lang="ru")
     include ../components/head/head
     include ../components/header/header
     include ../components/footer/footer
+    include ../components/popup/popup
 
     head
         //- start  block head
@@ -39,17 +40,17 @@ html(class="no-js", lang="ru")
         .page__footer
             +footer()
 
+        +popup()
 
-
-        a(href='#').linkTop.not-styleLink
+        //a(href='#').linkTop.not-styleLink
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
         script svg4everybody();
 
         script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
         script(src="%=static=%js/separate-js/inputmask.min.js" type="text/javascript")
         script(src="%=static=%js/separate-js/jquery.datetimepicker.js" type="text/javascript")
+        script(src='%=static=%js/separate-js/dropdown.js')
 
         //- start block script
         block script

@@ -28,12 +28,12 @@
   @if $enable-caret {
     &::after {
       display: inline-block;
-      //width: 0;
-      //height: 0;
+      width: 0;
+      height: 0;
       margin-left: $caret-width * .85;
       vertical-align: $caret-width * .85;
       content: "";
-      @include bg($arrow-bottom);
+      //@include bg($arrow-bottom);
 
     }
 

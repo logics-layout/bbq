@@ -31,8 +31,6 @@ select.selectpicker {
     color: #a7a7a7;
     border: 2px solid #cacaca;
     height: 34px;
-    font-family: 'Museo Sans Cyrl', sans-serif;
-    font-weight: 100;
     outline: none;
     font-style: italic;
 }
@@ -197,7 +195,7 @@ select.selectpicker {
     box-shadow: none;
 }
 .bootstrap-select.btn-group:not(.dropup) .dropdown-menu {
-    margin-top: -2px;
+    /*margin-top: -2px;*/
 }
 .bootstrap-select.btn-group.dropup .dropdown-menu {
     margin-bottom: -2px;
@@ -244,7 +242,7 @@ select.selectpicker {
 }
 .bootstrap-select.btn-group .dropdown-menu li a span.text {
   display: inline-block;
-    font-size: 14px;
+    font-size: 1rem;
     margin: 0;
 }
 .bootstrap-select.btn-group .dropdown-menu li small {

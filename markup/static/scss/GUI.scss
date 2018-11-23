@@ -7,8 +7,8 @@
 @import "libraries/bootstrap/tables";
 @import "libraries/bootstrap/forms";
 //@import "libraries/bootstrap/breadcrumbs";
-//@import "libraries/bootstrap/navs";
-//@import "libraries/bootstrap/dropdowns";
+//@import "libraries/bootstrap/nav";
+@import "libraries/bootstrap/dropdown";
 
 img{
   max-width: 100%;
@@ -154,6 +154,10 @@ label.form-label{
   line-height: 1em;
 }
 
+.btn-width{
+  width: 100%;
+}
+
 .input-toggle{
   display: flex;
   &__item{
@@ -208,6 +212,8 @@ label.form-label{
   &__input{
     display: none;
     &:checked~.style-checkbox__el{
+      border-color: $color-yellow;
+      color: $color-yellow;
       svg{
         opacity: 1;
         margin-top: 0;
@@ -215,9 +221,9 @@ label.form-label{
     }
   }
   &__el{
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
     border: 3px solid #fff;
     border-radius: 5px;
     display: block;
@@ -226,7 +232,7 @@ label.form-label{
     svg{
       fill: $colorAuto;
       position: absolute;
-      right: -9px;
+      right: -12px;
       top: -6px;
       transition: .2s;
       margin-top: 8px;
@@ -244,7 +250,37 @@ label.form-label{
       border-color: $color-yellow;
     }
   }
+  &_radio{
+    .style-checkbox__el{
+      border-radius: 50%;
+      position: relative;
+      color: transparent;
+      &:after{
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: $colorAuto;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0.3);
+        transition: .2s;
+      }
+      svg{
+        display: none !important;
+      }
+    }
 
+    .style-checkbox__input{
+      &:checked~.style-checkbox__el{
+        &:after{
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
 }
 
 ol, ul{
@@ -284,6 +320,168 @@ ol{
     }
   }
 }
+
+.bootstrap-select.btn-group{
+  position: relative;
+
+  .bs-searchbox{
+    border-bottom: 1px solid #c4cfd1;
+    padding: 0;
+    position: relative;
+    margin-top: -5px;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      //@include bg($search-g);
+    }
+    input{
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      height: 38px;
+      box-shadow: none;
+      padding-right: 30px;
+      padding-left: 18px;
+      &:hover{
+        border: none;
+        box-shadow: none;
+      }
+      &:focus{
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .dropdown-toggle{
+    background-color: transparent;
+    border: 4px solid #ffffff;
+    overflow: hidden;
+    background-clip: padding-box;
+    border-radius: 10px;
+    padding: 6px 17px;
+    padding-right: 35px;
+    height: 45px;
+    line-height: normal;
+    color: #fff;
+    .filter-option{
+      color: $colorAuto;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: bold;
+      font-style: normal;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .bs-caret{
+    background-color: $color-yellow;
+    line-height: 21px;
+    right: 18px;
+    .caret{
+      border: none;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      &:after{
+        content: '';
+        display: block;
+        //transform-origin: center center;
+        @include triangle('down', #fff, 10px, 5px);
+        transition: .2s;
+      }
+    }
+  }
+
+  &.select-text{
+    .dropdown-toggle{
+      border: none;
+      padding: 0;
+      font-weight: 600;
+      color: #46515a;
+      font-size: 14px;
+      height: auto;
+      line-height: initial;
+      box-shadow: none;
+      .filter-option.pull-left{
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+      }
+      .bs-caret{
+        background: transparent;
+        vertical-align: middle;
+        position: static;
+        display: inline-block;
+        line-height: normal;
+        margin: 0;
+        font-size: inherit;
+        width: 6px;
+        height: 19px;
+        .caret{
+          &:after{
+            content: '';
+            background: transparent;
+            //@include bg($arrow-bottom);
+          }
+        }
+      }
+    }
+    .dropdown-menu{
+       max-height: 560px !important;
+       //height: 560px;
+     }
+    >.dropdown-menu{
+      overflow: visible !important;
+      margin-top: 22px !important;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 18px;
+        @include triangle('up', #fff, 32px, 16px);
+        z-index: 1;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 17px;
+        @include triangle('up', #c4cfd1, 34px, 18px);
+      }
+    }
+  }
+  &.open{
+    .bs-caret{
+      .caret{
+        &:after{
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    .dropdown-menu{
+      display: block;
+    }
+    .dropdown-toggle {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .dropdown-menu{
+    @include nl;
+  }
+}
+//.bootstrap-select.btn-group:not(.dropup) .dropdown-menu {
+//  margin-top: -8px;
+//}
 
 @include text-border-bottom('white', #fff);
 @include text-border-bottom('yellow', $color-yellow);
